@@ -1100,14 +1100,6 @@
   },
   {
    "code": "FAS0210",
-   "title": "",
-   "credits": null,
-   "prereqText": "",
-   "groups": [],
-   "external": true
-  },
-  {
-   "code": "FAS0210*",
    "title": "Foundations for Academic Success: Strategic Academic Skills",
    "credits": 0,
    "prereqText": "",

@@ -44,7 +44,7 @@ def main() -> None:
     for prefix, (group, is_spec) in GROUPS.items():
         df = pd.read_excel(SHEETS / f"{prefix}_test.xlsx")
         for _, row in df.iterrows():
-            code = clean(row["Course Code"]).replace(" ", "").upper()
+            code = clean(row["Course Code"]).replace(" ", "").rstrip("*").upper()  # "*" marks a footnote
             if not code:
                 continue
             c = courses.setdefault(code, {"code": code, "title": "", "credits": None,
