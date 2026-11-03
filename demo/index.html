@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Course Route Explorer</title>
+<meta name="description" content="Pick a course and see every prerequisite on the route to it, and what it unlocks. Built from a curriculum knowledge graph.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #e9eef0;
+    --panel: #f7f9fa;
+    --ink: #17283a;
+    --muted: #5b6b7a;
+    --rule: #c9d3d9;
+    --focus: #0b63ce;
+    /* line colors, one per track */
+    --l-cs: #1f5fa8;
+    --l-math: #c2462b;
+    --l-sci: #2f8a5b;
+    --l-gened: #8a6d1f;
+    --l-elec: #6b5aa6;
+    --l-minor: #7d8790;
+    --l-ai: #d0347f;
+    --l-bda: #0f8b8d;
+    --l-se: #e08a00;
+    --l-csys: #4c6b2f;
+    --l-acs: #5a3f8c;
+    --l-ext: #a7b2bb;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: "Archivo", system-ui, sans-serif; font-variation-settings: "wdth" 100;
+    font-size: 16px; line-height: 1.5;
+  }
+  a { color: var(--l-cs); }
+  :focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+  header { padding: 28px 24px 8px; max-width: 1240px; margin: 0 auto; }
+  header h1 {
+    margin: 0; font-size: clamp(1.6rem, 3.4vw, 2.4rem); line-height: 1.1; font-weight: 800;
+    font-variation-settings: "wdth" 72; letter-spacing: -0.01em;
+  }
+  header p { margin: 6px 0 0; color: var(--muted); max-width: 64ch; }
+
+  .layout {
+    max-width: 1240px; margin: 0 auto; padding: 16px 24px 48px;
+    display: grid; grid-template-columns: 320px 1fr; gap: 28px; align-items: start;
+  }
+
+  /* ---------- course index ---------- */
+  .index { position: sticky; top: 16px; max-height: calc(100vh - 32px); display: flex; flex-direction: column; }
+  .search { width: 100%; font: inherit; padding: 10px 12px; border: 2px solid var(--ink); border-radius: 6px; background: var(--panel); color: var(--ink); }
+  .search::placeholder { color: var(--muted); }
+  .lines { margin-top: 12px; overflow-y: auto; padding-right: 4px; }
+  .line-group { margin: 0 0 14px; }
+  .line-group h2 { margin: 0 0 4px; font-size: 0.95rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+  .swatch { width: 22px; height: 8px; border-radius: 4px; flex: none; }
+  .stops { list-style: none; margin: 0; padding: 0 0 0 10px; border-left: 4px solid var(--c); }
+  .stops button {
+    all: unset; box-sizing: border-box; display: flex; gap: 10px; width: 100%; padding: 5px 8px; border-radius: 4px; cursor: pointer;
+    font-size: 0.9rem; line-height: 1.3;
+  }
+  .stops button:hover { background: var(--panel); }
+  .stops button:focus-visible { outline: 3px solid var(--focus); }
+  .stops button[aria-current="true"] { background: var(--ink); color: var(--paper); }
+  .stops .code { font-weight: 700; font-variant-numeric: tabular-nums; flex: none; width: 4.6em; }
+  .stops .title { color: inherit; opacity: .8; }
+  .empty-search { color: var(--muted); font-size: 0.9rem; }
+
+  /* ---------- station board ---------- */
+  .board { background: var(--panel); border: 2px solid var(--ink); border-radius: 10px; padding: 28px 28px 32px; min-width: 0; }
+  .station-code {
+    margin: 0; font-weight: 800; font-size: clamp(2.6rem, 7vw, 4.6rem); line-height: .95;
+    font-variation-settings: "wdth" 125; letter-spacing: -0.02em; font-variant-numeric: tabular-nums;
+  }
+  .station-title { margin: 8px 0 0; font-size: 1.35rem; font-weight: 600; max-width: 40ch; }
+  .facts { display: flex; flex-wrap: wrap; gap: 8px 10px; margin: 14px 0 0; padding: 0; list-style: none; }
+  .badge { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px 3px 6px; border-radius: 999px; background: var(--paper); font-size: 0.85rem; }
+  .badge .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--c); }
+  .facts .plain { background: none; padding-left: 0; color: var(--muted); }
+  .raw { margin: 10px 0 0; color: var(--muted); font-size: 0.9rem; }
+
+  .section-title { margin: 30px 0 10px; font-size: 1.05rem; font-weight: 700; }
+  .route { position: relative; padding-left: 32px; }
+  .route::before { content: ""; position: absolute; left: 2px; top: 10px; bottom: 10px; width: 6px; border-radius: 3px; background: var(--ink); }
+  .stage { position: relative; margin: 0 0 14px; }
+  .stage::before {
+    content: ""; position: absolute; left: -30px; top: 8px; width: 14px; height: 14px; border-radius: 50%;
+    background: var(--panel); border: 4px solid var(--ink);
+  }
+  .stage.here::before { background: var(--ink); width: 18px; height: 18px; left: -32px; top: 6px; }
+  .stage-label { margin: 0 0 6px; font-size: 0.85rem; color: var(--muted); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    all: unset; box-sizing: border-box; cursor: pointer; display: inline-flex; align-items: baseline; gap: 8px;
+    padding: 6px 12px 6px 10px; border-radius: 6px; background: var(--paper); border-left: 6px solid var(--c);
+    font-size: 0.92rem; line-height: 1.25; max-width: 100%;
+  }
+  .chip:hover { background: #dde5e9; }
+  .chip:focus-visible { outline: 3px solid var(--focus); }
+  .chip b { font-variant-numeric: tabular-nums; }
+  .chip span { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 26ch; }
+  .chip[data-external="true"] { cursor: default; border-left-style: dashed; }
+  .note { color: var(--muted); font-size: 0.92rem; margin: 0; }
+
+  .bottlenecks { margin-top: 30px; padding-top: 20px; border-top: 2px solid var(--rule); }
+  .bottlenecks ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
+  .bottlenecks li { display: grid; grid-template-columns: 3.2em 1fr; align-items: center; gap: 10px; }
+  .bottlenecks .bar { height: 10px; border-radius: 5px; background: var(--c); }
+  .bottlenecks .count { font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; }
+  .bottlenecks .who { font-size: 0.9rem; }
+  .bottlenecks .who button { all: unset; cursor: pointer; font-weight: 700; }
+  .bottlenecks .who button:focus-visible { outline: 3px solid var(--focus); }
+
+  footer { max-width: 1240px; margin: 0 auto; padding: 0 24px 32px; color: var(--muted); font-size: 0.85rem; }
+
+  @media (max-width: 860px) {
+    .layout { grid-template-columns: 1fr; }
+    .board { order: -1; }
+    .index { position: static; max-height: none; }
+    .lines { max-height: 40vh; }
+    .board { padding: 20px 16px 24px; }
+    header { padding: 20px 16px 4px; }
+    .layout { padding: 12px 16px 40px; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .board.arrive .station-code { animation: arrive .35s ease-out; }
+    @keyframes arrive { from { transform: translateY(6px); opacity: .2; } to { transform: none; opacity: 1; } }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Course Route Explorer</h1>
+  <p>Pick any course in the BSc Computer Science program to see every prerequisite on the route to it, and which courses it opens up. Data comes from the knowledge graph this project builds from the program's course-sequence flowchart.</p>
+</header>
+
+<div class="layout">
+  <nav class="index" aria-label="All courses">
+    <label for="q" class="visually-hidden" style="position:absolute;left:-9999px">Search courses</label>
+    <input id="q" class="search" type="search" placeholder="Search courses, e.g. 4352 or data" autocomplete="off">
+    <div class="lines" id="lines"></div>
+  </nav>
+
+  <main class="board" id="board" aria-live="polite">
+    <p class="note">Loading the course graph…</p>
+  </main>
+</div>
+
+<footer>
+  Built from the extracted catalog sheets in <a href="https://github.com/erraji-jihane">this repository</a>. "A or B" prerequisites are shown as both courses. A dashed edge marks a prerequisite named in the catalog but not listed as a course of this program.
+</footer>
+
+<script>
+const TRACKS = {
+  "Computer Science": "--l-cs", "Mathematics": "--l-math", "Science & Engineering": "--l-sci",
+  "General Education": "--l-gened", "Electives": "--l-elec", "Minor": "--l-minor",
+  "AI": "--l-ai", "Big Data Analytics": "--l-bda", "Software Engineering": "--l-se",
+  "Computer Systems": "--l-csys", "Advanced Computer Science": "--l-acs",
+};
+const TRACK_ORDER = ["Computer Science", "AI", "Big Data Analytics", "Software Engineering", "Computer Systems",
+  "Advanced Computer Science", "Mathematics", "Science & Engineering", "Electives", "General Education", "Minor"];
+
+let courses = new Map(), requires = new Map(), unlocks = new Map(), current = null;
+
+const color = code => {
+  const c = courses.get(code);
+  if (!c || c.external || !c.groups.length) return "var(--l-ext)";
+  const spec = c.groups.find(g => g.specialization);
+  return `var(${TRACKS[(spec || c.groups[0]).group] || "--l-ext"})`;
+};
+const esc = s => String(s).replace(/[&<>"]/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
+
+function chip(code) {
+  const c = courses.get(code) || { code, title: "", external: true };
+  const ext = c.external ? "true" : "false";
+  return `<button class="chip" style="--c:${color(code)}" data-code="${esc(code)}" data-external="${ext}"
+            ${c.external ? 'aria-disabled="true" title="Named as a prerequisite, not listed as a course of this program"' : ""}>
+            <b>${esc(code)}</b>${c.title ? `<span>${esc(c.title)}</span>` : ""}</button>`;
+}
+
+/* Longest-path depth of every prerequisite, so the route reads in the order courses must be taken. */
+function ancestorsByDepth(code) {
+  const depth = new Map();
+  const visit = (node, d, path) => {
+    for (const pre of requires.get(node) || []) {
+      if (path.has(pre)) continue; // guard against cycles in extracted data
+      if ((depth.get(pre) || 0) < d) depth.set(pre, d);
+      path.add(pre); visit(pre, d + 1, path); path.delete(pre);
+    }
+  };
+  visit(code, 1, new Set([code]));
+  const stages = [];
+  for (const [c, d] of depth) (stages[d] ||= []).push(c);
+  return stages.slice(1).map(s => s.sort()).reverse(); // furthest first
+}
+
+function descendants(code) {
+  const seen = new Set(), queue = [code];
+  while (queue.length) for (const next of unlocks.get(queue.shift()) || []) if (!seen.has(next) && next !== code) { seen.add(next); queue.push(next); }
+  return [...seen].sort();
+}
+
+function render(code, focusBoard) {
+  current = code;
+  const c = courses.get(code);
+  const stages = ancestorsByDepth(code);
+  const direct = [...(unlocks.get(code) || [])].sort();
+  const later = descendants(code).filter(x => !direct.includes(x));
+  const total = stages.reduce((n, s) => n + s.length, 0);
+
+  const facts = [
+    ...c.groups.map(g => `<li class="badge" style="--c:var(${TRACKS[g.group]})"><span class="dot"></span>${esc(g.group)}${g.role && g.role !== g.group ? `, ${esc(g.role.toLowerCase())}` : ""}</li>`),
+    c.credits ? `<li class="badge plain">${c.credits} credits</li>` : "",
+  ].join("");
+
+  const route = total
+    ? `<div class="route">${stages.map((s, i) => `
+        <div class="stage"><p class="stage-label">Step ${i + 1}</p>
+        <div class="chips">${s.map(chip).join("")}</div></div>`).join("")}
+        <div class="stage here"><p class="stage-label">You are here</p><div class="chips">${chip(code)}</div></div></div>`
+    : `<p class="note">No prerequisites: this course can be taken first.</p>`;
+
+  const opens = direct.length
+    ? `<div class="chips">${direct.map(chip).join("")}</div>${later.length ? `<p class="stage-label" style="margin-top:12px">And further down the line</p><div class="chips">${later.map(chip).join("")}</div>` : ""}`
+    : `<p class="note">Nothing in the program lists this course as a prerequisite.</p>`;
+
+  const board = document.getElementById("board");
+  board.innerHTML = `
+    <h2 class="station-code">${esc(code)}</h2>
+    <p class="station-title">${esc(c.title || "Untitled course")}</p>
+    <ul class="facts">${facts}</ul>
+    ${c.prereqText ? `<p class="raw">Catalog prerequisite text: ${esc(c.prereqText)}</p>` : ""}
+    <h3 class="section-title">Route to ${esc(code)}${total ? ` (${total} course${total > 1 ? "s" : ""} first)` : ""}</h3>
+    ${route}
+    <h3 class="section-title">What ${esc(code)} opens up</h3>
+    ${opens}
+    ${bottlenecksHtml()}`;
+  board.classList.remove("arrive"); void board.offsetWidth; board.classList.add("arrive");
+
+  document.querySelectorAll(".stops button").forEach(b => b.setAttribute("aria-current", b.dataset.code === code ? "true" : "false"));
+  if (location.hash.slice(1) !== code) history.replaceState(null, "", "#" + code);
+  if (focusBoard) board.querySelector(".station-code").focus?.();
+}
+
+function bottlenecksHtml() {
+  const counts = [...courses.keys()].filter(k => !courses.get(k).external)
+    .map(k => [k, descendants(k).length]).filter(([, n]) => n > 0).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, 6);
+  if (!counts.length) return "";
+  const max = counts[0][1];
+  return `<section class="bottlenecks"><h3 class="section-title" style="margin-top:0">Bottleneck courses</h3>
+    <p class="note" style="margin-bottom:10px">Falling behind on these delays the most later courses.</p>
+    <ol>${counts.map(([k, n]) => `<li><span class="count">${n}</span><div>
+      <div class="bar" style="--c:${color(k)};width:${Math.max(8, 100 * n / max)}%"></div>
+      <div class="who"><button data-code="${esc(k)}">${esc(k)}</button> ${esc(courses.get(k).title)}</div></div></li>`).join("")}</ol></section>`;
+}
+
+function renderIndex(filter = "") {
+  const f = filter.trim().toLowerCase();
+  const byTrack = new Map(TRACK_ORDER.map(t => [t, []]));
+  for (const c of courses.values()) {
+    if (c.external) continue;
+    if (f && !(c.code.toLowerCase().includes(f) || c.title.toLowerCase().includes(f))) continue;
+    for (const g of c.groups) byTrack.get(g.group)?.push(c);
+  }
+  const html = [...byTrack].filter(([, list]) => list.length).map(([track, list]) => `
+    <section class="line-group" style="--c:var(${TRACKS[track]})">
+      <h2><span class="swatch" style="background:var(${TRACKS[track]})"></span>${esc(track)}</h2>
+      <ul class="stops">${list.sort((a, b) => a.code.localeCompare(b.code)).map(c => `
+        <li><button data-code="${esc(c.code)}" aria-current="${c.code === current}"><span class="code">${esc(c.code)}</span><span class="title">${esc(c.title || "")}</span></button></li>`).join("")}</ul>
+    </section>`).join("");
+  document.getElementById("lines").innerHTML = html || `<p class="empty-search">No course matches "${esc(filter)}". Try a course number like 3309.</p>`;
+}
+
+document.addEventListener("click", e => {
+  const b = e.target.closest("button[data-code]");
+  if (!b || b.dataset.external === "true") return;
+  render(b.dataset.code, b.closest(".index") === null);
+  if (b.closest(".index") === null) window.scrollTo({ top: document.getElementById("board").offsetTop - 12, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+});
+document.getElementById("q").addEventListener("input", e => renderIndex(e.target.value));
+window.addEventListener("hashchange", () => { const k = location.hash.slice(1).toUpperCase(); if (courses.has(k) && !courses.get(k).external && k !== current) render(k); });
+
+fetch("data.json").then(r => r.json()).then(data => {
+  for (const c of data.courses) courses.set(c.code, c);
+  for (const { course, requires: pre } of data.edges) {
+    (requires.get(course) || requires.set(course, new Set()).get(course)).add(pre);
+    (unlocks.get(pre) || unlocks.set(pre, new Set()).get(pre)).add(course);
+  }
+  const fromHash = location.hash.slice(1).toUpperCase();
+  const start = courses.has(fromHash) && !courses.get(fromHash).external ? fromHash : "CSC4352";
+  renderIndex();
+  render(courses.has(start) ? start : [...courses.keys()][0]);
+}).catch(() => {
+  document.getElementById("board").innerHTML = `<p class="note">The course data didn't load. Refresh the page; if it keeps failing, data.json is missing from the deployment.</p>`;
+});
+</script>
+</body>
+</html>

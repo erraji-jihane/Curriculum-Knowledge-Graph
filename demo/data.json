@@ -1,0 +1,1802 @@
+{
+ "program": "BSc Computer Science (2023–2025 catalog)",
+ "courses": [
+  {
+   "code": "ARA1201",
+   "title": "",
+   "credits": 2,
+   "prereqText": "",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_Arabic"
+    }
+   ]
+  },
+  {
+   "code": "ARA1202",
+   "title": "",
+   "credits": 2,
+   "prereqText": "",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_Arabic"
+    }
+   ]
+  },
+  {
+   "code": "ARA1203",
+   "title": "",
+   "credits": 2,
+   "prereqText": "",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_Arabic"
+    }
+   ]
+  },
+  {
+   "code": "ARA3299",
+   "title": "",
+   "credits": 2,
+   "prereqText": "",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_Arabic"
+    }
+   ]
+  },
+  {
+   "code": "ARB1201",
+   "title": "",
+   "credits": 2,
+   "prereqText": "",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_Arabic"
+    }
+   ]
+  },
+  {
+   "code": "ARB1202",
+   "title": "",
+   "credits": 2,
+   "prereqText": "",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_Arabic"
+    }
+   ]
+  },
+  {
+   "code": "ARB1203",
+   "title": "",
+   "credits": 2,
+   "prereqText": "",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_Arabic"
+    }
+   ]
+  },
+  {
+   "code": "ARB1241",
+   "title": "",
+   "credits": 2,
+   "prereqText": "",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_Arabic"
+    }
+   ]
+  },
+  {
+   "code": "ART1301",
+   "title": "Art Appreciation & Creation",
+   "credits": 3,
+   "prereqText": "Eng1301",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_Art"
+    }
+   ]
+  },
+  {
+   "code": "ART1302",
+   "title": "Art Appreciation & Creation",
+   "credits": 3,
+   "prereqText": "Eng1302",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_Art"
+    }
+   ]
+  },
+  {
+   "code": "ART1303",
+   "title": "Art Appreciation & Creation",
+   "credits": 3,
+   "prereqText": "Eng1303",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_Art"
+    }
+   ]
+  },
+  {
+   "code": "ART1304",
+   "title": "Art Appreciation & Creation",
+   "credits": 3,
+   "prereqText": "Eng1304",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_Art"
+    }
+   ]
+  },
+  {
+   "code": "ART1305",
+   "title": "Art Appreciation & Creation",
+   "credits": 3,
+   "prereqText": "Eng1305",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_Art"
+    }
+   ]
+  },
+  {
+   "code": "ART3399",
+   "title": "Art Appreciation & Creation",
+   "credits": 3,
+   "prereqText": "Eng1306",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_Art"
+    }
+   ]
+  },
+  {
+   "code": "BIO1401",
+   "title": "Basic Sciences Elective",
+   "credits": 4,
+   "prereqText": "",
+   "groups": [
+    {
+     "group": "Science & Engineering",
+     "specialization": false,
+     "role": "Science"
+    }
+   ]
+  },
+  {
+   "code": "BIO1402",
+   "title": "Basic Sciences Elective",
+   "credits": 4,
+   "prereqText": "",
+   "groups": [
+    {
+     "group": "Science & Engineering",
+     "specialization": false,
+     "role": "Science"
+    }
+   ]
+  },
+  {
+   "code": "CHE1401",
+   "title": "Basic Sciences Elective",
+   "credits": 4,
+   "prereqText": "",
+   "groups": [
+    {
+     "group": "Science & Engineering",
+     "specialization": false,
+     "role": "Science"
+    }
+   ]
+  },
+  {
+   "code": "COM1301",
+   "title": "Public Speaking",
+   "credits": 3,
+   "prereqText": "Eng1301",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd"
+    }
+   ]
+  },
+  {
+   "code": "COM2327",
+   "title": "Art Appreciation & Creation",
+   "credits": 3,
+   "prereqText": "Eng1309",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_Art"
+    }
+   ]
+  },
+  {
+   "code": "COURSE1",
+   "title": "",
+   "credits": 3,
+   "prereqText": "",
+   "groups": [
+    {
+     "group": "Minor",
+     "specialization": false,
+     "role": "Minor"
+    }
+   ]
+  },
+  {
+   "code": "COURSE2",
+   "title": "",
+   "credits": 3,
+   "prereqText": "",
+   "groups": [
+    {
+     "group": "Minor",
+     "specialization": false,
+     "role": "Minor"
+    }
+   ]
+  },
+  {
+   "code": "COURSE3",
+   "title": "",
+   "credits": 3,
+   "prereqText": "",
+   "groups": [
+    {
+     "group": "Minor",
+     "specialization": false,
+     "role": "Minor"
+    }
+   ]
+  },
+  {
+   "code": "COURSE4",
+   "title": "",
+   "credits": 3,
+   "prereqText": "",
+   "groups": [
+    {
+     "group": "Minor",
+     "specialization": false,
+     "role": "Minor"
+    }
+   ]
+  },
+  {
+   "code": "COURSE5",
+   "title": "",
+   "credits": 3,
+   "prereqText": "",
+   "groups": [
+    {
+     "group": "Minor",
+     "specialization": false,
+     "role": "Minor"
+    }
+   ]
+  },
+  {
+   "code": "CSC1401",
+   "title": "Computer Programming",
+   "credits": 4,
+   "prereqText": "",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Required"
+    }
+   ]
+  },
+  {
+   "code": "CSC2302",
+   "title": "Data Structures",
+   "credits": 3,
+   "prereqText": "CSC1401",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Required"
+    }
+   ]
+  },
+  {
+   "code": "CSC2305",
+   "title": "Computer Organization and Architecture",
+   "credits": 3,
+   "prereqText": "CSC2302,PHY1402",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Required"
+    }
+   ]
+  },
+  {
+   "code": "CSC2306",
+   "title": "Object Oriented Programming",
+   "credits": 3,
+   "prereqText": "CSC2302",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Required"
+    }
+   ]
+  },
+  {
+   "code": "CSC3308",
+   "title": "",
+   "credits": null,
+   "prereqText": "",
+   "groups": [],
+   "external": true
+  },
+  {
+   "code": "CSC3309",
+   "title": "Introduction to Artificial Intelligence",
+   "credits": 3,
+   "prereqText": "CSC2306, CSC3323, MTH3301",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Specialization"
+    },
+    {
+     "group": "AI",
+     "specialization": true,
+     "role": "Required"
+    },
+    {
+     "group": "Advanced Computer Science",
+     "specialization": true,
+     "role": "Required"
+    }
+   ]
+  },
+  {
+   "code": "CSC3310",
+   "title": "Artificial Neural Networks",
+   "credits": 3,
+   "prereqText": "CSC3308 or CSC3309",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Specialization"
+    },
+    {
+     "group": "AI",
+     "specialization": true,
+     "role": "Optional"
+    }
+   ]
+  },
+  {
+   "code": "CSC3311",
+   "title": "Computer Vision",
+   "credits": 3,
+   "prereqText": "CSC3308 or CSC3309",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Specialization"
+    },
+    {
+     "group": "AI",
+     "specialization": true,
+     "role": "Optional"
+    }
+   ]
+  },
+  {
+   "code": "CSC3315",
+   "title": "Languages and Compilers",
+   "credits": 3,
+   "prereqText": "CSC2306",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Required"
+    }
+   ]
+  },
+  {
+   "code": "CSC3323",
+   "title": "Analysis of Algorithms",
+   "credits": 3,
+   "prereqText": "CSC2302",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Required"
+    }
+   ]
+  },
+  {
+   "code": "CSC3324",
+   "title": "Software Engineering",
+   "credits": 3,
+   "prereqText": "CSC2306",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Required"
+    }
+   ]
+  },
+  {
+   "code": "CSC3326",
+   "title": "Database Systems",
+   "credits": 3,
+   "prereqText": "CSC2306",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Required"
+    }
+   ]
+  },
+  {
+   "code": "CSC3328",
+   "title": "Embedded Systems",
+   "credits": 3,
+   "prereqText": "CSC3351",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Specialization"
+    },
+    {
+     "group": "Computer Systems",
+     "specialization": true,
+     "role": "Required"
+    },
+    {
+     "group": "Advanced Computer Science",
+     "specialization": true,
+     "role": "Optional"
+    }
+   ]
+  },
+  {
+   "code": "CSC3329",
+   "title": "IoT & Big Data Streaming",
+   "credits": 3,
+   "prereqText": "CSC3371",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Specialization"
+    },
+    {
+     "group": "Electives",
+     "specialization": false,
+     "role": "elective"
+    },
+    {
+     "group": "Big Data Analytics",
+     "specialization": true,
+     "role": "Optional"
+    },
+    {
+     "group": "Computer Systems",
+     "specialization": true,
+     "role": "Optional"
+    }
+   ]
+  },
+  {
+   "code": "CSC3331",
+   "title": "Introduction to Big Data Environment and Applications",
+   "credits": 3,
+   "prereqText": "CSC3326",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Specialization"
+    },
+    {
+     "group": "Electives",
+     "specialization": false,
+     "role": "elective"
+    },
+    {
+     "group": "Big Data Analytics",
+     "specialization": true,
+     "role": "Required"
+    },
+    {
+     "group": "Computer Systems",
+     "specialization": true,
+     "role": "Optional"
+    }
+   ]
+  },
+  {
+   "code": "CSC3346",
+   "title": "Data Engineering and Visualization",
+   "credits": 3,
+   "prereqText": "CSC3326",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Specialization"
+    },
+    {
+     "group": "Electives",
+     "specialization": false,
+     "role": "elective"
+    },
+    {
+     "group": "Big Data Analytics",
+     "specialization": true,
+     "role": "Optional"
+    }
+   ]
+  },
+  {
+   "code": "CSC3347",
+   "title": "Machine Learning and Data Mining",
+   "credits": 3,
+   "prereqText": "CSC3308 or CSC3309",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Specialization"
+    },
+    {
+     "group": "AI",
+     "specialization": true,
+     "role": "Required"
+    }
+   ]
+  },
+  {
+   "code": "CSC3348",
+   "title": "Natural Language Processing and Text Mining",
+   "credits": 3,
+   "prereqText": "CSC3308 or CSC3309",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Specialization"
+    },
+    {
+     "group": "Electives",
+     "specialization": false,
+     "role": "elective"
+    },
+    {
+     "group": "AI",
+     "specialization": true,
+     "role": "Optional"
+    }
+   ]
+  },
+  {
+   "code": "CSC3349",
+   "title": "Data Warehousing",
+   "credits": 3,
+   "prereqText": "CSC3326",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Specialization"
+    },
+    {
+     "group": "Electives",
+     "specialization": false,
+     "role": "elective"
+    },
+    {
+     "group": "Big Data Analytics",
+     "specialization": true,
+     "role": "Optional"
+    }
+   ]
+  },
+  {
+   "code": "CSC3351",
+   "title": "Operating Systems",
+   "credits": 3,
+   "prereqText": "CSC2305",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Required"
+    }
+   ]
+  },
+  {
+   "code": "CSC3357",
+   "title": "Object-oriented Design",
+   "credits": 3,
+   "prereqText": "CSC2306",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Specialization"
+    },
+    {
+     "group": "Electives",
+     "specialization": false,
+     "role": "elective"
+    },
+    {
+     "group": "Software Engineering",
+     "specialization": true,
+     "role": "Optional"
+    }
+   ]
+  },
+  {
+   "code": "CSC3358",
+   "title": "Blockchain Business Application",
+   "credits": 3,
+   "prereqText": "CSC3326",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Specialization"
+    },
+    {
+     "group": "Electives",
+     "specialization": false,
+     "role": "elective"
+    },
+    {
+     "group": "Software Engineering",
+     "specialization": true,
+     "role": "Optional"
+    }
+   ]
+  },
+  {
+   "code": "CSC3359",
+   "title": "Software Testing",
+   "credits": 3,
+   "prereqText": "CSC2306",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Specialization"
+    },
+    {
+     "group": "Electives",
+     "specialization": false,
+     "role": "elective"
+    },
+    {
+     "group": "Software Engineering",
+     "specialization": true,
+     "role": "Optional"
+    }
+   ]
+  },
+  {
+   "code": "CSC3371",
+   "title": "Computer Communications and Networks",
+   "credits": 3,
+   "prereqText": "CSC2305",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Required"
+    }
+   ]
+  },
+  {
+   "code": "CSC3373",
+   "title": "Cloud Computing",
+   "credits": 3,
+   "prereqText": "CSC3351, CSC3371",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Specialization"
+    },
+    {
+     "group": "Computer Systems",
+     "specialization": true,
+     "role": "Required"
+    }
+   ]
+  },
+  {
+   "code": "CSC3374",
+   "title": "Advanced and Distributed Programming Paradigms",
+   "credits": 3,
+   "prereqText": "CSC3351, CSC3326",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Required"
+    }
+   ]
+  },
+  {
+   "code": "CSC3376",
+   "title": "Systems Programming",
+   "credits": 3,
+   "prereqText": "CSC3351",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Specialization"
+    },
+    {
+     "group": "Electives",
+     "specialization": false,
+     "role": "elective"
+    },
+    {
+     "group": "Computer Systems",
+     "specialization": true,
+     "role": "Optional"
+    }
+   ]
+  },
+  {
+   "code": "CSC4306",
+   "title": "Software Project Management",
+   "credits": 3,
+   "prereqText": "CSC3324",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Specialization"
+    },
+    {
+     "group": "Electives",
+     "specialization": false,
+     "role": "elective"
+    },
+    {
+     "group": "Software Engineering",
+     "specialization": true,
+     "role": "Optional"
+    }
+   ]
+  },
+  {
+   "code": "CSC4307",
+   "title": "Agile Software Engineering and DevOps",
+   "credits": 3,
+   "prereqText": "CSC3326, CSC3351",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Specialization"
+    },
+    {
+     "group": "Software Engineering",
+     "specialization": true,
+     "role": "Required"
+    }
+   ]
+  },
+  {
+   "code": "CSC4308",
+   "title": "Cyber Security",
+   "credits": 3,
+   "prereqText": "CSC3371",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Specialization"
+    },
+    {
+     "group": "Advanced Computer Science",
+     "specialization": true,
+     "role": "Required"
+    }
+   ]
+  },
+  {
+   "code": "CSC4309",
+   "title": "Enterprise Cloud and Mobile Applications",
+   "credits": 3,
+   "prereqText": "CSC3374",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Specialization"
+    },
+    {
+     "group": "Software Engineering",
+     "specialization": true,
+     "role": "Required"
+    }
+   ]
+  },
+  {
+   "code": "CSC4351",
+   "title": "Statistical Analysis",
+   "credits": 3,
+   "prereqText": "MTH3301",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Specialization"
+    },
+    {
+     "group": "Electives",
+     "specialization": false,
+     "role": "elective"
+    },
+    {
+     "group": "Big Data Analytics",
+     "specialization": true,
+     "role": "Optional"
+    }
+   ]
+  },
+  {
+   "code": "CSC4352",
+   "title": "Big Data Analytics",
+   "credits": 3,
+   "prereqText": "CSC3331",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Specialization"
+    },
+    {
+     "group": "Big Data Analytics",
+     "specialization": true,
+     "role": "Required"
+    }
+   ]
+  },
+  {
+   "code": "CSC4399",
+   "title": "Special Topics in Computer Science",
+   "credits": 3,
+   "prereqText": "depends on the topic",
+   "groups": [
+    {
+     "group": "Computer Science",
+     "specialization": false,
+     "role": "Specialization"
+    },
+    {
+     "group": "Advanced Computer Science",
+     "specialization": true,
+     "role": "Optional"
+    }
+   ]
+  },
+  {
+   "code": "ECO1300",
+   "title": "Social Sciences",
+   "credits": 3,
+   "prereqText": "",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_Socialsciences"
+    }
+   ]
+  },
+  {
+   "code": "EGR2302",
+   "title": "Engineering Economics",
+   "credits": 3,
+   "prereqText": "MTH1303",
+   "groups": [
+    {
+     "group": "Science & Engineering",
+     "specialization": false,
+     "role": "Engineering"
+    }
+   ]
+  },
+  {
+   "code": "EGR4300",
+   "title": "Internship",
+   "credits": 3,
+   "prereqText": "FRN3210,ENG2303",
+   "groups": [
+    {
+     "group": "Science & Engineering",
+     "specialization": false,
+     "role": "Engineering"
+    }
+   ]
+  },
+  {
+   "code": "EGR4402",
+   "title": "Capstone Design",
+   "credits": 4,
+   "prereqText": "FRN3210,ENG2303",
+   "groups": [
+    {
+     "group": "Science & Engineering",
+     "specialization": false,
+     "role": "Engineering"
+    }
+   ]
+  },
+  {
+   "code": "ENG1301",
+   "title": "English Composition I",
+   "credits": 3,
+   "prereqText": "",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd"
+    }
+   ]
+  },
+  {
+   "code": "ENG1302",
+   "title": "",
+   "credits": null,
+   "prereqText": "",
+   "groups": [],
+   "external": true
+  },
+  {
+   "code": "ENG1303",
+   "title": "",
+   "credits": null,
+   "prereqText": "",
+   "groups": [],
+   "external": true
+  },
+  {
+   "code": "ENG1304",
+   "title": "",
+   "credits": null,
+   "prereqText": "",
+   "groups": [],
+   "external": true
+  },
+  {
+   "code": "ENG1305",
+   "title": "",
+   "credits": null,
+   "prereqText": "",
+   "groups": [],
+   "external": true
+  },
+  {
+   "code": "ENG1306",
+   "title": "",
+   "credits": null,
+   "prereqText": "",
+   "groups": [],
+   "external": true
+  },
+  {
+   "code": "ENG1307",
+   "title": "",
+   "credits": null,
+   "prereqText": "",
+   "groups": [],
+   "external": true
+  },
+  {
+   "code": "ENG1308",
+   "title": "",
+   "credits": null,
+   "prereqText": "",
+   "groups": [],
+   "external": true
+  },
+  {
+   "code": "ENG1309",
+   "title": "",
+   "credits": null,
+   "prereqText": "",
+   "groups": [],
+   "external": true
+  },
+  {
+   "code": "ENG1310",
+   "title": "",
+   "credits": null,
+   "prereqText": "",
+   "groups": [],
+   "external": true
+  },
+  {
+   "code": "ENG2303",
+   "title": "Technical Writing",
+   "credits": 3,
+   "prereqText": "COM1301",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd"
+    }
+   ]
+  },
+  {
+   "code": "ENG2320",
+   "title": "Art Appreciation & Creation",
+   "credits": 3,
+   "prereqText": "Eng1307",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_Art"
+    }
+   ]
+  },
+  {
+   "code": "FAS0210",
+   "title": "",
+   "credits": null,
+   "prereqText": "",
+   "groups": [],
+   "external": true
+  },
+  {
+   "code": "FAS0210*",
+   "title": "Foundations for Academic Success: Strategic Academic Skills",
+   "credits": 0,
+   "prereqText": "",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd"
+    }
+   ]
+  },
+  {
+   "code": "FAS1220",
+   "title": "Foundations for Academic Success: Introduction to Critical Thinking",
+   "credits": 2,
+   "prereqText": "FAS0210",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd"
+    }
+   ]
+  },
+  {
+   "code": "FRN3210",
+   "title": "French",
+   "credits": 2,
+   "prereqText": "",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd"
+    }
+   ]
+  },
+  {
+   "code": "FYE1101",
+   "title": "First Year Experience",
+   "credits": 1,
+   "prereqText": "",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd"
+    }
+   ]
+  },
+  {
+   "code": "FYE1102",
+   "title": "First Year Experience",
+   "credits": 1,
+   "prereqText": "FYE1101",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd"
+    }
+   ]
+  },
+  {
+   "code": "GEO1301",
+   "title": "Social Sciences",
+   "credits": 3,
+   "prereqText": "",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_Socialsciences"
+    }
+   ]
+  },
+  {
+   "code": "HIS1301",
+   "title": "History or Political Science",
+   "credits": 3,
+   "prereqText": "FAS1220",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_History"
+    }
+   ]
+  },
+  {
+   "code": "HIS2301",
+   "title": "History or Political Science",
+   "credits": 3,
+   "prereqText": "FAS1220",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_History"
+    }
+   ]
+  },
+  {
+   "code": "HUM1310",
+   "title": "History or Political Science",
+   "credits": 3,
+   "prereqText": "FAS1220",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_History"
+    }
+   ]
+  },
+  {
+   "code": "HUM2301",
+   "title": "Art Appreciation & Creation",
+   "credits": 3,
+   "prereqText": "Eng1308",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_Art"
+    }
+   ]
+  },
+  {
+   "code": "HUM2302",
+   "title": "History or Political Science",
+   "credits": 3,
+   "prereqText": "FAS1220",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_History"
+    }
+   ]
+  },
+  {
+   "code": "HUM2305",
+   "title": "",
+   "credits": 3,
+   "prereqText": "ENG1301",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_BlockTitle"
+    }
+   ]
+  },
+  {
+   "code": "HUM2306",
+   "title": "",
+   "credits": 3,
+   "prereqText": "ENG1301",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_BlockTitle"
+    }
+   ]
+  },
+  {
+   "code": "HUM2307",
+   "title": "",
+   "credits": 3,
+   "prereqText": "ENG1301",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_BlockTitle"
+    }
+   ]
+  },
+  {
+   "code": "LIT2301",
+   "title": "",
+   "credits": 3,
+   "prereqText": "ENG1301",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_BlockTitle"
+    }
+   ]
+  },
+  {
+   "code": "LIT3370",
+   "title": "Art Appreciation & Creation",
+   "credits": 3,
+   "prereqText": "Eng1310",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_Art"
+    }
+   ]
+  },
+  {
+   "code": "MTH1303",
+   "title": "Calculus I: Differential and Integral Calculus",
+   "credits": 3,
+   "prereqText": "",
+   "groups": [
+    {
+     "group": "Mathematics",
+     "specialization": false,
+     "role": "Mathematics"
+    }
+   ]
+  },
+  {
+   "code": "MTH1304",
+   "title": "Discrete Mathematics",
+   "credits": 3,
+   "prereqText": "",
+   "groups": [
+    {
+     "group": "Mathematics",
+     "specialization": false,
+     "role": "Mathematics"
+    }
+   ]
+  },
+  {
+   "code": "MTH2301",
+   "title": "Calculus II: Multivariable Calculus",
+   "credits": 3,
+   "prereqText": "MTH1303",
+   "groups": [
+    {
+     "group": "Mathematics",
+     "specialization": false,
+     "role": "Mathematics"
+    }
+   ]
+  },
+  {
+   "code": "MTH2320",
+   "title": "Linear Algebra",
+   "credits": 3,
+   "prereqText": "MTH2301",
+   "groups": [
+    {
+     "group": "Mathematics",
+     "specialization": false,
+     "role": "Mathematics"
+    }
+   ]
+  },
+  {
+   "code": "MTH3301",
+   "title": "Probability and Statistics for Engineers",
+   "credits": 3,
+   "prereqText": "MTH2301",
+   "groups": [
+    {
+     "group": "Mathematics",
+     "specialization": false,
+     "role": "Mathematics"
+    }
+   ]
+  },
+  {
+   "code": "PHI2301",
+   "title": "",
+   "credits": 3,
+   "prereqText": "ENG1301",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_BlockTitle"
+    }
+   ]
+  },
+  {
+   "code": "PHI2302",
+   "title": "",
+   "credits": 3,
+   "prereqText": "ENG1301",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_BlockTitle"
+    }
+   ]
+  },
+  {
+   "code": "PHY1401",
+   "title": "Physics I",
+   "credits": 4,
+   "prereqText": "",
+   "groups": [
+    {
+     "group": "Science & Engineering",
+     "specialization": false,
+     "role": "Science"
+    }
+   ]
+  },
+  {
+   "code": "PHY1402",
+   "title": "Physics II",
+   "credits": 4,
+   "prereqText": "PHY1401",
+   "groups": [
+    {
+     "group": "Science & Engineering",
+     "specialization": false,
+     "role": "Science"
+    }
+   ]
+  },
+  {
+   "code": "PSC2301",
+   "title": "History or Political Science",
+   "credits": 3,
+   "prereqText": "ENG1301",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_History"
+    }
+   ]
+  },
+  {
+   "code": "PSY1301",
+   "title": "Social Sciences",
+   "credits": 3,
+   "prereqText": "",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_Socialsciences"
+    }
+   ]
+  },
+  {
+   "code": "SOC1301",
+   "title": "Social Sciences",
+   "credits": 3,
+   "prereqText": "",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_Socialsciences"
+    }
+   ]
+  },
+  {
+   "code": "SSC1310",
+   "title": "Social Sciences",
+   "credits": 3,
+   "prereqText": "",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd_Socialsciences"
+    }
+   ]
+  },
+  {
+   "code": "XXX****SLORSLP1101",
+   "title": "Civic Engagement",
+   "credits": 1,
+   "prereqText": "",
+   "groups": [
+    {
+     "group": "General Education",
+     "specialization": false,
+     "role": "GenEd"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "course": "ART1301",
+   "requires": "ENG1301"
+  },
+  {
+   "course": "ART1302",
+   "requires": "ENG1302"
+  },
+  {
+   "course": "ART1303",
+   "requires": "ENG1303"
+  },
+  {
+   "course": "ART1304",
+   "requires": "ENG1304"
+  },
+  {
+   "course": "ART1305",
+   "requires": "ENG1305"
+  },
+  {
+   "course": "ART3399",
+   "requires": "ENG1306"
+  },
+  {
+   "course": "COM1301",
+   "requires": "ENG1301"
+  },
+  {
+   "course": "COM2327",
+   "requires": "ENG1309"
+  },
+  {
+   "course": "CSC2302",
+   "requires": "CSC1401"
+  },
+  {
+   "course": "CSC2305",
+   "requires": "CSC2302"
+  },
+  {
+   "course": "CSC2305",
+   "requires": "PHY1402"
+  },
+  {
+   "course": "CSC2306",
+   "requires": "CSC2302"
+  },
+  {
+   "course": "CSC3309",
+   "requires": "CSC2306"
+  },
+  {
+   "course": "CSC3309",
+   "requires": "CSC3323"
+  },
+  {
+   "course": "CSC3309",
+   "requires": "MTH3301"
+  },
+  {
+   "course": "CSC3310",
+   "requires": "CSC3308"
+  },
+  {
+   "course": "CSC3310",
+   "requires": "CSC3309"
+  },
+  {
+   "course": "CSC3311",
+   "requires": "CSC3308"
+  },
+  {
+   "course": "CSC3311",
+   "requires": "CSC3309"
+  },
+  {
+   "course": "CSC3315",
+   "requires": "CSC2306"
+  },
+  {
+   "course": "CSC3323",
+   "requires": "CSC2302"
+  },
+  {
+   "course": "CSC3324",
+   "requires": "CSC2306"
+  },
+  {
+   "course": "CSC3326",
+   "requires": "CSC2306"
+  },
+  {
+   "course": "CSC3328",
+   "requires": "CSC3351"
+  },
+  {
+   "course": "CSC3329",
+   "requires": "CSC3371"
+  },
+  {
+   "course": "CSC3331",
+   "requires": "CSC3326"
+  },
+  {
+   "course": "CSC3346",
+   "requires": "CSC3326"
+  },
+  {
+   "course": "CSC3347",
+   "requires": "CSC3308"
+  },
+  {
+   "course": "CSC3347",
+   "requires": "CSC3309"
+  },
+  {
+   "course": "CSC3348",
+   "requires": "CSC3308"
+  },
+  {
+   "course": "CSC3348",
+   "requires": "CSC3309"
+  },
+  {
+   "course": "CSC3349",
+   "requires": "CSC3326"
+  },
+  {
+   "course": "CSC3351",
+   "requires": "CSC2305"
+  },
+  {
+   "course": "CSC3357",
+   "requires": "CSC2306"
+  },
+  {
+   "course": "CSC3358",
+   "requires": "CSC3326"
+  },
+  {
+   "course": "CSC3359",
+   "requires": "CSC2306"
+  },
+  {
+   "course": "CSC3371",
+   "requires": "CSC2305"
+  },
+  {
+   "course": "CSC3373",
+   "requires": "CSC3351"
+  },
+  {
+   "course": "CSC3373",
+   "requires": "CSC3371"
+  },
+  {
+   "course": "CSC3374",
+   "requires": "CSC3326"
+  },
+  {
+   "course": "CSC3374",
+   "requires": "CSC3351"
+  },
+  {
+   "course": "CSC3376",
+   "requires": "CSC3351"
+  },
+  {
+   "course": "CSC4306",
+   "requires": "CSC3324"
+  },
+  {
+   "course": "CSC4307",
+   "requires": "CSC3326"
+  },
+  {
+   "course": "CSC4307",
+   "requires": "CSC3351"
+  },
+  {
+   "course": "CSC4308",
+   "requires": "CSC3371"
+  },
+  {
+   "course": "CSC4309",
+   "requires": "CSC3374"
+  },
+  {
+   "course": "CSC4351",
+   "requires": "MTH3301"
+  },
+  {
+   "course": "CSC4352",
+   "requires": "CSC3331"
+  },
+  {
+   "course": "EGR2302",
+   "requires": "MTH1303"
+  },
+  {
+   "course": "EGR4300",
+   "requires": "ENG2303"
+  },
+  {
+   "course": "EGR4300",
+   "requires": "FRN3210"
+  },
+  {
+   "course": "EGR4402",
+   "requires": "ENG2303"
+  },
+  {
+   "course": "EGR4402",
+   "requires": "FRN3210"
+  },
+  {
+   "course": "ENG2303",
+   "requires": "COM1301"
+  },
+  {
+   "course": "ENG2320",
+   "requires": "ENG1307"
+  },
+  {
+   "course": "FAS1220",
+   "requires": "FAS0210"
+  },
+  {
+   "course": "FYE1102",
+   "requires": "FYE1101"
+  },
+  {
+   "course": "HIS1301",
+   "requires": "FAS1220"
+  },
+  {
+   "course": "HIS2301",
+   "requires": "FAS1220"
+  },
+  {
+   "course": "HUM1310",
+   "requires": "FAS1220"
+  },
+  {
+   "course": "HUM2301",
+   "requires": "ENG1308"
+  },
+  {
+   "course": "HUM2302",
+   "requires": "FAS1220"
+  },
+  {
+   "course": "HUM2305",
+   "requires": "ENG1301"
+  },
+  {
+   "course": "HUM2306",
+   "requires": "ENG1301"
+  },
+  {
+   "course": "HUM2307",
+   "requires": "ENG1301"
+  },
+  {
+   "course": "LIT2301",
+   "requires": "ENG1301"
+  },
+  {
+   "course": "LIT3370",
+   "requires": "ENG1310"
+  },
+  {
+   "course": "MTH2301",
+   "requires": "MTH1303"
+  },
+  {
+   "course": "MTH2320",
+   "requires": "MTH2301"
+  },
+  {
+   "course": "MTH3301",
+   "requires": "MTH2301"
+  },
+  {
+   "course": "PHI2301",
+   "requires": "ENG1301"
+  },
+  {
+   "course": "PHI2302",
+   "requires": "ENG1301"
+  },
+  {
+   "course": "PHY1402",
+   "requires": "PHY1401"
+  },
+  {
+   "course": "PSC2301",
+   "requires": "ENG1301"
+  }
+ ]
+}

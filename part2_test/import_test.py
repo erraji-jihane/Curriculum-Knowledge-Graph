@@ -87,8 +87,10 @@ def read_excel_safe(path: Path) -> list[dict]:
 def extract_course_codes(text: str) -> list[str]:
     if not text or text == "NONE":
         return []
-    cleaned = text.upper().replace(" ", "")
-    return sorted(set(re.findall(r"[A-Z]{2,4}\d{4}", cleaned)))
+    # Match codes with word boundaries ("CSC 3308" or "CSC3308"). Removing all
+    # spaces first would glue words onto codes: "CSC3308 or CSC3309" became
+    # "CSC3308ORCSC3309" and produced a bogus course "RCSC3309".
+    return sorted({dept + num for dept, num in re.findall(r"\b([A-Z]{2,4})\s*(\d{4})\b", text.upper())})
 
 
 # ============================================================

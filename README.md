@@ -6,6 +6,8 @@ Course flowcharts are drawn for people: boxes, arrows and footnotes rather than 
 
 Built as Project 1 for CSC 3331 (Spring 2026), using a real BSc Computer Science catalog (2023–2025) as the input.
 
+**Live demo: [Course Route Explorer](https://curriculum-graph-explorer.vercel.app)**: pick any course to see its full prerequisite route and what it unlocks. It runs on the same extracted data as the graph, as a static page (`demo/`), so it needs no database.
+
 ## Pipeline
 
 ```text
@@ -93,6 +95,7 @@ python import_test.py                 # Excel sheets → Neo4j (clears the graph
 ```text
 ├── extract.py                         # LLM extraction + cleaning → Excel
 ├── BSCSC_Course-Sequence_Catalog ...  # input PDF
+├── demo/                              # static Course Route Explorer (index.html, data.json, build_data.py)
 ├── part2_test/
 │   ├── *_test.xlsx                    # extracted sheets used for the import
 │   ├── import_test.py                 # full graph import with prerequisite edges
