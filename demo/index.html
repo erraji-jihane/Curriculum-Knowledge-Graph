@@ -7,143 +7,151 @@
 <meta name="description" content="Pick a course and see every prerequisite on the route to it, and what it unlocks. Built from a curriculum knowledge graph.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --paper: #e9eef0;
-    --panel: #f7f9fa;
-    --ink: #17283a;
-    --muted: #5b6b7a;
-    --rule: #c9d3d9;
-    --focus: #0b63ce;
-    /* line colors, one per track */
-    --l-cs: #1f5fa8;
-    --l-math: #c2462b;
-    --l-sci: #2f8a5b;
-    --l-gened: #8a6d1f;
-    --l-elec: #6b5aa6;
-    --l-minor: #7d8790;
-    --l-ai: #d0347f;
-    --l-bda: #0f8b8d;
-    --l-se: #e08a00;
-    --l-csys: #4c6b2f;
-    --l-acs: #5a3f8c;
-    --l-ext: #a7b2bb;
+    --bg: #ffffff;
+    --surface: #f8f9fc;
+    --line: #eceef4;
+    --ink: #2b2d42;
+    --muted: #8d90a6;
+    --accent: #6c8ae4;
+    /* one soft color per track; chips use a pastel tint of it */
+    --l-cs: #7c9ce8;
+    --l-math: #ef9a8a;
+    --l-sci: #7fc8a0;
+    --l-gened: #e3c27a;
+    --l-elec: #a99be0;
+    --l-minor: #b4bcc6;
+    --l-ai: #ee9cc4;
+    --l-bda: #7cc9c9;
+    --l-se: #f2b880;
+    --l-csys: #a7c78a;
+    --l-acs: #b49ad6;
+    --l-ext: #cfd5dc;
   }
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
   body {
-    margin: 0; background: var(--paper); color: var(--ink);
-    font-family: "Archivo", system-ui, sans-serif; font-variation-settings: "wdth" 100;
-    font-size: 16px; line-height: 1.5;
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 15px; line-height: 1.5; -webkit-font-smoothing: antialiased;
   }
-  a { color: var(--l-cs); }
-  :focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+  a { color: var(--accent); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-  header { padding: 28px 24px 8px; max-width: 1240px; margin: 0 auto; }
-  header h1 {
-    margin: 0; font-size: clamp(1.6rem, 3.4vw, 2.4rem); line-height: 1.1; font-weight: 800;
-    font-variation-settings: "wdth" 72; letter-spacing: -0.01em;
-  }
-  header p { margin: 6px 0 0; color: var(--muted); max-width: 64ch; }
+  header { padding: 32px 24px 8px; max-width: 1180px; margin: 0 auto; }
+  header h1 { margin: 0; font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
+  header h1 span { color: var(--accent); }
+  header p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
 
   .layout {
-    max-width: 1240px; margin: 0 auto; padding: 16px 24px 48px;
-    display: grid; grid-template-columns: 320px 1fr; gap: 28px; align-items: start;
+    max-width: 1180px; margin: 0 auto; padding: 24px 24px 48px;
+    display: grid; grid-template-columns: 300px 1fr; gap: 32px; align-items: start;
   }
 
   /* ---------- course index ---------- */
   .index { position: sticky; top: 16px; max-height: calc(100vh - 32px); display: flex; flex-direction: column; }
-  .search { width: 100%; font: inherit; padding: 10px 12px; border: 2px solid var(--ink); border-radius: 6px; background: var(--panel); color: var(--ink); }
+  .search {
+    width: 100%; font: inherit; font-size: 14px; padding: 10px 14px; border: 1px solid var(--line);
+    border-radius: 999px; background: var(--surface); color: var(--ink);
+  }
+  .search:focus { outline: none; border-color: var(--accent); background: var(--bg); }
   .search::placeholder { color: var(--muted); }
-  .lines { margin-top: 12px; overflow-y: auto; padding-right: 4px; }
-  .line-group { margin: 0 0 14px; }
-  .line-group h2 { margin: 0 0 4px; font-size: 0.95rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
-  .swatch { width: 22px; height: 8px; border-radius: 4px; flex: none; }
-  .stops { list-style: none; margin: 0; padding: 0 0 0 10px; border-left: 4px solid var(--c); }
+  .lines { margin-top: 16px; overflow-y: auto; padding-right: 4px; }
+  .line-group { margin: 0 0 18px; }
+  .line-group h2 {
+    margin: 0 0 4px; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--muted); display: flex; align-items: center; gap: 8px;
+  }
+  .swatch { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+  .stops { list-style: none; margin: 0; padding: 0; }
   .stops button {
-    all: unset; box-sizing: border-box; display: flex; gap: 10px; width: 100%; padding: 5px 8px; border-radius: 4px; cursor: pointer;
-    font-size: 0.9rem; line-height: 1.3;
+    all: unset; box-sizing: border-box; display: flex; gap: 10px; width: 100%; padding: 6px 10px; border-radius: 8px; cursor: pointer;
+    font-size: 13px; line-height: 1.35;
   }
-  .stops button:hover { background: var(--panel); }
-  .stops button:focus-visible { outline: 3px solid var(--focus); }
-  .stops button[aria-current="true"] { background: var(--ink); color: var(--paper); }
-  .stops .code { font-weight: 700; font-variant-numeric: tabular-nums; flex: none; width: 4.6em; }
-  .stops .title { color: inherit; opacity: .8; }
-  .empty-search { color: var(--muted); font-size: 0.9rem; }
+  .stops button:hover { background: var(--surface); }
+  .stops button:focus-visible { outline: 2px solid var(--accent); }
+  .stops button[aria-current="true"] { background: color-mix(in srgb, var(--c) 22%, white); }
+  .stops .code { font-weight: 500; font-variant-numeric: tabular-nums; flex: none; width: 4.8em; }
+  .stops .title { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .empty-search { color: var(--muted); font-size: 13px; }
 
-  /* ---------- station board ---------- */
-  .board { background: var(--panel); border: 2px solid var(--ink); border-radius: 10px; padding: 28px 28px 32px; min-width: 0; }
+  /* ---------- course board ---------- */
+  .board { background: var(--bg); border: 1px solid var(--line); border-radius: 20px; padding: 32px; min-width: 0; }
   .station-code {
-    margin: 0; font-weight: 800; font-size: clamp(2.6rem, 7vw, 4.6rem); line-height: .95;
-    font-variation-settings: "wdth" 125; letter-spacing: -0.02em; font-variant-numeric: tabular-nums;
+    margin: 0; font-weight: 600; font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1;
+    letter-spacing: -0.03em; font-variant-numeric: tabular-nums;
   }
-  .station-title { margin: 8px 0 0; font-size: 1.35rem; font-weight: 600; max-width: 40ch; }
-  .facts { display: flex; flex-wrap: wrap; gap: 8px 10px; margin: 14px 0 0; padding: 0; list-style: none; }
-  .badge { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px 3px 6px; border-radius: 999px; background: var(--paper); font-size: 0.85rem; }
-  .badge .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--c); }
-  .facts .plain { background: none; padding-left: 0; color: var(--muted); }
-  .raw { margin: 10px 0 0; color: var(--muted); font-size: 0.9rem; }
+  .station-title { margin: 8px 0 0; font-size: 17px; color: var(--muted); max-width: 44ch; }
+  .facts { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 0; padding: 0; list-style: none; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 999px;
+    background: color-mix(in srgb, var(--c, var(--l-ext)) 20%, white); font-size: 12px;
+  }
+  .badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--c); }
+  .facts .plain { background: var(--surface); color: var(--muted); }
+  .raw { margin: 12px 0 0; color: var(--muted); font-size: 12px; }
 
-  .section-title { margin: 30px 0 10px; font-size: 1.05rem; font-weight: 700; }
-  .route { position: relative; padding-left: 32px; }
-  .route::before { content: ""; position: absolute; left: 2px; top: 10px; bottom: 10px; width: 6px; border-radius: 3px; background: var(--ink); }
-  .stage { position: relative; margin: 0 0 14px; }
+  .section-title { margin: 36px 0 14px; font-size: 13px; font-weight: 500; color: var(--muted); }
+  .route { position: relative; padding-left: 28px; }
+  .route::before { content: ""; position: absolute; left: 5px; top: 10px; bottom: 14px; width: 2px; border-radius: 1px; background: var(--line); }
+  .stage { position: relative; margin: 0 0 16px; }
   .stage::before {
-    content: ""; position: absolute; left: -30px; top: 8px; width: 14px; height: 14px; border-radius: 50%;
-    background: var(--panel); border: 4px solid var(--ink);
+    content: ""; position: absolute; left: -27px; top: 6px; width: 10px; height: 10px; border-radius: 50%;
+    background: var(--bg); border: 2px solid #d6d9e3;
   }
-  .stage.here::before { background: var(--ink); width: 18px; height: 18px; left: -32px; top: 6px; }
-  .stage-label { margin: 0 0 6px; font-size: 0.85rem; color: var(--muted); }
-  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .stage.here::before { background: var(--accent); border-color: var(--accent); }
+  .stage-label { margin: 0 0 6px; font-size: 12px; color: var(--muted); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
   .chip {
     all: unset; box-sizing: border-box; cursor: pointer; display: inline-flex; align-items: baseline; gap: 8px;
-    padding: 6px 12px 6px 10px; border-radius: 6px; background: var(--paper); border-left: 6px solid var(--c);
-    font-size: 0.92rem; line-height: 1.25; max-width: 100%;
+    padding: 6px 12px; border-radius: 10px; background: color-mix(in srgb, var(--c) 20%, white);
+    font-size: 13px; line-height: 1.25; max-width: 100%;
   }
-  .chip:hover { background: #dde5e9; }
-  .chip:focus-visible { outline: 3px solid var(--focus); }
-  .chip b { font-variant-numeric: tabular-nums; }
-  .chip span { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 26ch; }
-  .chip[data-external="true"] { cursor: default; border-left-style: dashed; }
-  .note { color: var(--muted); font-size: 0.92rem; margin: 0; }
+  .chip:hover { background: color-mix(in srgb, var(--c) 32%, white); }
+  .chip:focus-visible { outline: 2px solid var(--accent); }
+  .chip b { font-weight: 500; font-variant-numeric: tabular-nums; }
+  .chip span { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 24ch; }
+  .chip[data-external="true"] { cursor: default; background: var(--bg); border: 1px dashed #d6d9e3; }
+  .note { color: var(--muted); font-size: 13px; margin: 0; }
 
-  .bottlenecks { margin-top: 30px; padding-top: 20px; border-top: 2px solid var(--rule); }
-  .bottlenecks ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
-  .bottlenecks li { display: grid; grid-template-columns: 3.2em 1fr; align-items: center; gap: 10px; }
-  .bottlenecks .bar { height: 10px; border-radius: 5px; background: var(--c); }
-  .bottlenecks .count { font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; }
-  .bottlenecks .who { font-size: 0.9rem; }
-  .bottlenecks .who button { all: unset; cursor: pointer; font-weight: 700; }
-  .bottlenecks .who button:focus-visible { outline: 3px solid var(--focus); }
+  .bottlenecks { margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--line); }
+  .bottlenecks ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+  .bottlenecks li { display: grid; grid-template-columns: 2.4em 1fr; align-items: center; gap: 10px; }
+  .bottlenecks .bar { height: 6px; border-radius: 3px; background: color-mix(in srgb, var(--c) 60%, white); }
+  .bottlenecks .count { font-weight: 500; font-variant-numeric: tabular-nums; text-align: right; font-size: 13px; }
+  .bottlenecks .who { font-size: 12px; color: var(--muted); margin-top: 3px; }
+  .bottlenecks .who button { all: unset; cursor: pointer; font-weight: 500; color: var(--ink); }
+  .bottlenecks .who button:focus-visible { outline: 2px solid var(--accent); }
 
-  footer { max-width: 1240px; margin: 0 auto; padding: 0 24px 32px; color: var(--muted); font-size: 0.85rem; }
+  footer { max-width: 1180px; margin: 0 auto; padding: 0 24px 32px; color: var(--muted); font-size: 12px; }
 
   @media (max-width: 860px) {
-    .layout { grid-template-columns: 1fr; }
-    .board { order: -1; }
+    .layout { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+    .board { order: -1; padding: 22px 18px; }
     .index { position: static; max-height: none; }
     .lines { max-height: 40vh; }
-    .board { padding: 20px 16px 24px; }
-    header { padding: 20px 16px 4px; }
-    .layout { padding: 12px 16px 40px; }
+    header { padding: 22px 16px 4px; }
+    .layout { padding: 16px 16px 40px; }
   }
   @media (prefers-reduced-motion: no-preference) {
-    .board.arrive .station-code { animation: arrive .35s ease-out; }
-    @keyframes arrive { from { transform: translateY(6px); opacity: .2; } to { transform: none; opacity: 1; } }
+    .board.arrive .station-code { animation: arrive .3s ease-out; }
+    @keyframes arrive { from { transform: translateY(4px); opacity: .3; } to { transform: none; opacity: 1; } }
   }
 </style>
+
 </head>
 <body>
 <header>
-  <h1>Course Route Explorer</h1>
-  <p>Pick any course in the BSc Computer Science program to see every prerequisite on the route to it, and which courses it opens up. Data comes from the knowledge graph this project builds from the program's course-sequence flowchart.</p>
+  <h1>Course <span>Routes</span></h1>
+  <p>BSc Computer Science · prerequisites and what each course unlocks</p>
 </header>
 
 <div class="layout">
   <nav class="index" aria-label="All courses">
     <label for="q" class="visually-hidden" style="position:absolute;left:-9999px">Search courses</label>
-    <input id="q" class="search" type="search" placeholder="Search courses, e.g. 4352 or data" autocomplete="off">
+    <input id="q" class="search" type="search" placeholder="Search a course" autocomplete="off">
     <div class="lines" id="lines"></div>
   </nav>
 
@@ -153,7 +161,7 @@
 </div>
 
 <footer>
-  Built from the extracted catalog sheets in <a href="https://github.com/erraji-jihane">this repository</a>. "A or B" prerequisites are shown as both courses. A dashed edge marks a prerequisite named in the catalog but not listed as a course of this program.
+  Dashed: prerequisite outside the program.
 </footer>
 
 <script>
@@ -223,22 +231,22 @@ function render(code, focusBoard) {
     ? `<div class="route">${stages.map((s, i) => `
         <div class="stage"><p class="stage-label">Step ${i + 1}</p>
         <div class="chips">${s.map(chip).join("")}</div></div>`).join("")}
-        <div class="stage here"><p class="stage-label">You are here</p><div class="chips">${chip(code)}</div></div></div>`
-    : `<p class="note">No prerequisites: this course can be taken first.</p>`;
+        <div class="stage here"><p class="stage-label">This course</p><div class="chips">${chip(code)}</div></div></div>`
+    : `<p class="note">No prerequisites.</p>`;
 
   const opens = direct.length
-    ? `<div class="chips">${direct.map(chip).join("")}</div>${later.length ? `<p class="stage-label" style="margin-top:12px">And further down the line</p><div class="chips">${later.map(chip).join("")}</div>` : ""}`
-    : `<p class="note">Nothing in the program lists this course as a prerequisite.</p>`;
+    ? `<div class="chips">${direct.map(chip).join("")}</div>${later.length ? `<p class="stage-label" style="margin-top:12px">Later</p><div class="chips">${later.map(chip).join("")}</div>` : ""}`
+    : `<p class="note">Nothing.</p>`;
 
   const board = document.getElementById("board");
   board.innerHTML = `
     <h2 class="station-code">${esc(code)}</h2>
     <p class="station-title">${esc(c.title || "Untitled course")}</p>
     <ul class="facts">${facts}</ul>
-    ${c.prereqText ? `<p class="raw">Catalog prerequisite text: ${esc(c.prereqText)}</p>` : ""}
-    <h3 class="section-title">Route to ${esc(code)}${total ? ` (${total} course${total > 1 ? "s" : ""} first)` : ""}</h3>
+    ${c.prereqText ? `<p class="raw">Catalog: ${esc(c.prereqText)}</p>` : ""}
+    <h3 class="section-title">Route${total ? ` · ${total} course${total > 1 ? "s" : ""} first` : ""}</h3>
     ${route}
-    <h3 class="section-title">What ${esc(code)} opens up</h3>
+    <h3 class="section-title">Unlocks</h3>
     ${opens}
     ${bottlenecksHtml()}`;
   board.classList.remove("arrive"); void board.offsetWidth; board.classList.add("arrive");
@@ -253,8 +261,7 @@ function bottlenecksHtml() {
     .map(k => [k, descendants(k).length]).filter(([, n]) => n > 0).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, 6);
   if (!counts.length) return "";
   const max = counts[0][1];
-  return `<section class="bottlenecks"><h3 class="section-title" style="margin-top:0">Bottleneck courses</h3>
-    <p class="note" style="margin-bottom:10px">Falling behind on these delays the most later courses.</p>
+  return `<section class="bottlenecks"><h3 class="section-title" style="margin-top:0">Bottlenecks · courses that unlock the most</h3>
     <ol>${counts.map(([k, n]) => `<li><span class="count">${n}</span><div>
       <div class="bar" style="--c:${color(k)};width:${Math.max(8, 100 * n / max)}%"></div>
       <div class="who"><button data-code="${esc(k)}">${esc(k)}</button> ${esc(courses.get(k).title)}</div></div></li>`).join("")}</ol></section>`;
