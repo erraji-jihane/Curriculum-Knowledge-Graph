@@ -6,7 +6,9 @@ Course flowcharts are drawn for people: boxes, arrows and footnotes rather than 
 
 Built as Project 1 for CSC 3331 (Spring 2026), using a real BSc Computer Science catalog (2023–2025) as the input.
 
-**Live demo: [Course Route Explorer](https://curriculum-graph-explorer.vercel.app)**: pick any course to see its full prerequisite route and what it unlocks. It runs on the same extracted data as the graph, as a static page (`demo/`), so it needs no database.
+**Live demo: [Course Routes](https://curriculum-graph-explorer.vercel.app)**: pick any course to see its full prerequisite route and what it unlocks. It runs on the same extracted data as the graph, as a static page (`demo/`), so it needs no database.
+
+![Course Routes explorer showing the prerequisite route of CSC2305](docs/explorer.png)
 
 ## Pipeline
 
